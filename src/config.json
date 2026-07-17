@@ -1,0 +1,13 @@
+{
+    "base_model": "CKPT/BASE/llava-med-v1.5-mistral-7b",
+    "sft_adapter": "CKPT/SFT/best",
+    "lora_adapter": "CKPT/GRPO/checkpoint-best",
+    "samples_dir": "../samples",
+    "output_path": "../samples/inference_results.json",
+    "prompt": "Generate a detailed radiology report for this chest X-ray. Describe both abnormal and normal findings across all visible anatomical structures.",
+    "max_new_tokens": 1024,
+    "temperature": 0.2,
+    "top_p": 0.9,
+    "do_sample": true,
+    "seed": 42
+}

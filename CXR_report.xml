@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module name="CXR_report" type="runtime">
+             
+     <tag name="inputs">
+              
+          <tag name="CXR Image" type="resource">
+               <template>
+                    <tag name="label" value="CXR Image"/>
+                    <tag name="accepted_type" value="image"/>
+                    <tag name="prohibit_upload" value="True"/>
+               </template>
+          </tag>
+          <tag name="mex_url" type="system-input"/>
+          <tag name="bisque_token" type="system-input"/>
+     </tag>
+         
+     <tag name="outputs">
+                  
+          <tag name="NonImage">
+                           
+               <template>
+                                    
+                    <tag name="label" value="Outputs"/>
+                                
+                    <tag name="Generated Report" type="file"/>
+               </template>
+                       
+          </tag>
+              
+     </tag>
+         
+     <tag name="execute_options">
+                  
+          <tag name="iterable" value="CXR Image" type="dataset"/>
+              
+     </tag>
+         
+     <tag name="module_options">
+                  
+          <tag name="version" value="1"/>
+              
+     </tag>
+         
+     <tag name="display_options">
+                 
+          <tag name="group" value="Medical Imaging"/>
+
+     </tag>
+
+     <tag name="help" type="file" value="public/help.html"/>
+         
+     <tag name="thumbnail" type="file" value="public/thumbnail.jpg"/>
+            
+     <tag name="title" type="string" value="CXR_report"/>
+         
+     <tag name="authors" type="string" value="Md Islam"/>
+         
+     <tag name="description" type="string" value="Generate a radiology report for a chest X-ray using LLaVA-Med fine-tuned with SFT + GRPO LoRA adapters."/>
+</module>

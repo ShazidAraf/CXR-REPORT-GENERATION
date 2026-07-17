@@ -1,0 +1,31 @@
+# Build-context hygiene.
+
+# Stale inference outputs from host runs.
+samples/inference_results.json
+samples/viz/
+
+# Conda env spec is unused in the container (we pip-install).
+environment.yml
+
+# Python build artifacts.
+**/__pycache__/
+*.pyc
+*.pyo
+
+# bqmod / dev scaffolding not needed in the image.
+bqconfig.json
+xml_template
+
+# HF / torch caches if they ever sit alongside the project.
+.cache/
+.huggingface/
+
+# Editor / VCS noise.
+.git/
+.gitignore
+.vscode/
+.idea/
+
+# The Dockerfile itself doesn't need to ship into the image.
+Dockerfile
+.dockerignore

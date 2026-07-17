@@ -1,0 +1,1 @@
+{"Name": "CXR_report", "Author": "Md Islam", "Description": "Generate a radiology report for a chest X-ray using LLaVA-Med fine-tuned with SFT + GRPO LoRA adapters.", "Inputs": {"CXR Image": "image"}, "Outputs": {"Generated Report": "file"}}

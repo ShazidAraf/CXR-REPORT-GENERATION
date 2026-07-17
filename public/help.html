@@ -1,0 +1,27 @@
+<h1>BISQUE — CXR Report Generator</h1>
+<p>Generate a radiology report from a chest X-ray using <strong>LLaVA-Med v1.5 (Mistral-7B)</strong>
+fine-tuned with <strong>SFT + GRPO</strong> LoRA adapters.</p>
+<h2>Inputs</h2>
+<ul>
+<li><strong>CXR Image</strong> — a single chest X-ray image resource.</li>
+</ul>
+<h2>Outputs</h2>
+<ul>
+<li><strong>Generated Report</strong> — a <code>.txt</code> file containing the generated radiology
+  report, describing both abnormal and normal findings across the visible
+  anatomical structures.</li>
+</ul>
+<h2>How it works</h2>
+<ol>
+<li>The base model <code>llava-med-v1.5-mistral-7b</code> is loaded from the
+   self-contained weights shipped inside the module (<code>src/CKPT/BASE</code>).</li>
+<li>The <strong>SFT</strong> LoRA adapter is merged, then the <strong>GRPO</strong> LoRA adapter on top.</li>
+<li>The X-ray is passed through the model with a report-generation prompt and
+   the resulting report is uploaded back to BisQue as a file resource.</li>
+</ol>
+<h2>Notes</h2>
+<ul>
+<li>Generation parameters (prompt, temperature, top_p, max_new_tokens) are set
+  in <code>src/config.json</code>.</li>
+<li>A GPU is recommended; the 7B model runs in fp16.</li>
+</ul>

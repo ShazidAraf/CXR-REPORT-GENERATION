@@ -1,0 +1,45 @@
+# ==================================================================
+# BISQUE module — LIGHTWEIGHT CPU / arm64 image for LOCALHOST BISQUE
+# INTEGRATION TESTING on a Mac (Apple Silicon) without a GPU.
+#
+# This image does NOT contain the 7B model or its CUDA deps. It runs
+# run_module() in STUB mode (BISQUE_STUB=1), returning a canned report so
+# you can verify the full BisQue round-trip (input fetch -> run -> output
+# upload -> result in web UI) on a low-RAM, GPU-less host.
+#
+# For REAL inference use ./Dockerfile (CUDA, GPU host).
+#
+# Build (native arm64 on Apple Silicon — fast, no emulation):
+#   docker build -f Dockerfile.cpu -t biodev.ece.ucsb.edu:5000/cxr_report:v1.0.0-stub .
+# ==================================================================
+
+FROM python:3.10-slim
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    PIP_NO_CACHE_DIR=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    BISQUE_STUB=1
+
+RUN mkdir /module
+WORKDIR /module
+
+# Only the BisQue client deps are needed for the stub path.
+RUN pip install --upgrade pip \
+    && pip install six lxml requests requests-toolbelt
+
+# ===================Copy Source Code===============================
+# Code only — NOT src/CKPT (no model weights in the stub image).
+COPY src/__init__.py src/BQ_run_module.py src/inference.py src/config.json /module/src/
+COPY samples /module/samples
+
+# ===================BisQue plumbing================================
+COPY PythonScriptWrapper.py /module/
+COPY bqapi/ /module/bqapi
+COPY public /module/public
+COPY CXR_report.xml /module/CXR_report.xml
+
+ENV PATH=/module:$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ENV PYTHONPATH=$PYTHONPATH:/module:/module/src
+
+CMD ["python", "PythonScriptWrapper.py"]

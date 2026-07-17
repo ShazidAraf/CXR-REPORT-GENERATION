@@ -1,0 +1,25 @@
+# === Model weights (too large for GitHub; distributed separately) ===
+src/CKPT/
+
+# === macOS / editor / VCS noise ===
+.DS_Store
+.vscode/
+.idea/
+
+# === Python build artifacts ===
+**/__pycache__/
+*.pyc
+*.pyo
+
+# === Stale run outputs / logs ===
+build.log
+samples/inference_results.json
+samples/viz/
+
+# === Local backups ===
+*.bak
+bqapi/comm.py.corrupt-dockerfile.bak
+
+# === HF / torch caches ===
+.cache/
+.huggingface/
