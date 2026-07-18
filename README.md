@@ -7,6 +7,10 @@ GitHub's file size limit). Download them here and place them under `src/CKPT/`:
 
 **Model weights (Google Drive):** https://drive.google.com/file/d/1S5Cdc14Uldnc4rjWNbf9f1AO39n0nDtv/view?usp=sharing
 
+This archive contains **all** required weights — the base model plus the SFT and
+GRPO LoRA adapters. No other downloads are needed (no HuggingFace fetch at
+runtime); the module is fully self-contained once these are in place.
+
 For Docker build/run instructions, see [`DOCKER.md`](DOCKER.md).
 
 ## Contents

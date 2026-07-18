@@ -27,8 +27,9 @@ size limit). Download them here:
 
 **Model weights (Google Drive):** https://drive.google.com/file/d/1S5Cdc14Uldnc4rjWNbf9f1AO39n0nDtv/view?usp=sharing
 
-After downloading, unpack them under `src/CKPT/` so the layout matches
-`src/config.json`:
+This archive contains **all** required weights — the base model plus the SFT and
+GRPO LoRA adapters. No other downloads are needed. After downloading, unpack them
+under `src/CKPT/` so the layout matches `src/config.json`:
 
 ```
 src/CKPT/
