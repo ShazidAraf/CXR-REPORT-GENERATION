@@ -23,3 +23,6 @@ bqapi/comm.py.corrupt-dockerfile.bak
 # === HF / torch caches ===
 .cache/
 .huggingface/
+
+# leftover sandbox test artifact
+speedtest.bin

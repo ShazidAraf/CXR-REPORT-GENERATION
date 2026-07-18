@@ -1,0 +1,67 @@
+<svg viewBox="0 0 1040 500" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+<title id="t">CXR Report Generator pipeline</title>
+<desc id="d">A chest X-ray is fed into LLaVA-Med v1.5 (Mistral-7B) with merged SFT and GRPO LoRA adapters, producing a text radiology report.</desc>
+<defs>
+<marker id="ar" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5F5E5A"/></marker>
+</defs>
+<rect x="0" y="0" width="1040" height="500" fill="#FFFFFF"/>
+<text x="40" y="46" font-size="26" font-weight="700" fill="#26215C">CXR Report Generator</text>
+<text x="40" y="72" font-size="15" fill="#5F5E5A">Vision-language radiology reporting &#183; BisQue module &#183; group: Medical Imaging</text>
+<line x1="40" y1="90" x2="1000" y2="90" stroke="#D3D1C7" stroke-width="1"/>
+
+<g>
+<rect x="40" y="150" width="200" height="200" rx="12" fill="#E1F5EE" stroke="#1D9E75" stroke-width="1.5"/>
+<text x="140" y="140" font-size="13" font-weight="600" fill="#0F6E56" text-anchor="middle">INPUT</text>
+<rect x="92" y="176" width="96" height="112" rx="6" fill="#FFFFFF" stroke="#1D9E75" stroke-width="1.5"/>
+<path d="M140 190 v86 M140 196 q-22 6 -34 30 M140 196 q22 6 34 30 M112 236 q10 20 24 22 M168 236 q-10 20 -24 22" stroke="#5DCAA5" stroke-width="3" fill="none" stroke-linecap="round"/>
+<text x="140" y="312" font-size="14" font-weight="700" fill="#0F6E56" text-anchor="middle">Chest X-ray</text>
+<text x="140" y="332" font-size="12" fill="#5F5E5A" text-anchor="middle">single image resource</text>
+</g>
+
+<line x1="248" y1="250" x2="298" y2="250" stroke="#5F5E5A" stroke-width="2" marker-end="url(#ar)"/>
+
+<g>
+<rect x="308" y="120" width="424" height="260" rx="14" fill="#EEEDFE" stroke="#7F77DD" stroke-width="1.5"/>
+<text x="520" y="150" font-size="13" font-weight="600" fill="#3C3489" text-anchor="middle">MODEL</text>
+<text x="520" y="178" font-size="18" font-weight="700" fill="#26215C" text-anchor="middle">LLaVA-Med v1.5 (Mistral-7B)</text>
+
+<rect x="336" y="200" width="168" height="58" rx="9" fill="#FFFFFF" stroke="#AFA9EC" stroke-width="1.3"/>
+<text x="420" y="226" font-size="13" font-weight="600" fill="#3C3489" text-anchor="middle">Vision encoder</text>
+<text x="420" y="244" font-size="11" fill="#5F5E5A" text-anchor="middle">image &#8594; features</text>
+
+<rect x="536" y="200" width="168" height="58" rx="9" fill="#FFFFFF" stroke="#AFA9EC" stroke-width="1.3"/>
+<text x="620" y="226" font-size="13" font-weight="600" fill="#3C3489" text-anchor="middle">Language model</text>
+<text x="620" y="244" font-size="11" fill="#5F5E5A" text-anchor="middle">prompt &#8594; report</text>
+
+<line x1="504" y1="229" x2="536" y2="229" stroke="#7F77DD" stroke-width="1.6" marker-end="url(#ar)"/>
+
+<text x="520" y="296" font-size="12" font-weight="600" fill="#3C3489" text-anchor="middle">merged fine-tuning adapters</text>
+<rect x="356" y="308" width="146" height="46" rx="9" fill="#CECBF6" stroke="#7F77DD" stroke-width="1.2"/>
+<text x="429" y="330" font-size="13" font-weight="700" fill="#26215C" text-anchor="middle">SFT LoRA</text>
+<text x="429" y="346" font-size="10.5" fill="#3C3489" text-anchor="middle">supervised</text>
+<rect x="538" y="308" width="146" height="46" rx="9" fill="#CECBF6" stroke="#7F77DD" stroke-width="1.2"/>
+<text x="611" y="330" font-size="13" font-weight="700" fill="#26215C" text-anchor="middle">GRPO LoRA</text>
+<text x="611" y="346" font-size="10.5" fill="#3C3489" text-anchor="middle">reinforcement</text>
+</g>
+
+<line x1="740" y1="250" x2="790" y2="250" stroke="#5F5E5A" stroke-width="2" marker-end="url(#ar)"/>
+
+<g>
+<rect x="800" y="150" width="200" height="200" rx="12" fill="#FAECE7" stroke="#D85A30" stroke-width="1.5"/>
+<text x="900" y="140" font-size="13" font-weight="600" fill="#993C1D" text-anchor="middle">OUTPUT</text>
+<rect x="852" y="172" width="96" height="116" rx="6" fill="#FFFFFF" stroke="#D85A30" stroke-width="1.5"/>
+<text x="866" y="196" font-size="11" font-weight="700" fill="#993C1D">FINDINGS</text>
+<line x1="866" y1="206" x2="934" y2="206" stroke="#F0997B" stroke-width="2"/>
+<line x1="866" y1="218" x2="934" y2="218" stroke="#F5C4B3" stroke-width="2"/>
+<line x1="866" y1="230" x2="920" y2="230" stroke="#F5C4B3" stroke-width="2"/>
+<text x="866" y="252" font-size="11" font-weight="700" fill="#993C1D">IMPRESSION</text>
+<line x1="866" y1="262" x2="934" y2="262" stroke="#F0997B" stroke-width="2"/>
+<line x1="866" y1="274" x2="912" y2="274" stroke="#F5C4B3" stroke-width="2"/>
+<text x="900" y="312" font-size="14" font-weight="700" fill="#993C1D" text-anchor="middle">Radiology report</text>
+<text x="900" y="332" font-size="12" fill="#5F5E5A" text-anchor="middle">.txt file resource</text>
+</g>
+
+<line x1="40" y1="418" x2="1000" y2="418" stroke="#D3D1C7" stroke-width="1"/>
+<text x="40" y="446" font-size="12.5" fill="#444441"><tspan font-weight="700">Prompt:</tspan> "detailed radiology report... abnormal &amp; normal findings"   <tspan font-weight="700">&#183;  Decoding:</tspan> fp16, max 1024 tokens, temp 0.2, top-p 0.9</text>
+<text x="40" y="470" font-size="12.5" fill="#444441"><tspan font-weight="700">Runtime:</tspan> GPU (CUDA) recommended &#183; weights baked into image (self-contained, no download) &#183; one image per run</text>
+</svg>
