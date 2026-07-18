@@ -23,8 +23,12 @@ There are two Docker images:
 ## 1. Get the model weights (required for real inference)
 
 The weights (~16 GB) are **not** in this repository (they exceed GitHub's file
-size limit). Obtain them separately and place them under `src/CKPT/` so the
-layout matches `src/config.json`:
+size limit). Download them here:
+
+**Model weights (Google Drive):** https://drive.google.com/file/d/1S5Cdc14Uldnc4rjWNbf9f1AO39n0nDtv/view?usp=sharing
+
+After downloading, unpack them under `src/CKPT/` so the layout matches
+`src/config.json`:
 
 ```
 src/CKPT/

@@ -1,6 +1,13 @@
 # Chest X-ray Report Generation
 
+## Model weights
 
+The model weights (~16 GB) are **not** included in this repository (they exceed
+GitHub's file size limit). Download them here and place them under `src/CKPT/`:
+
+**Model weights (Google Drive):** https://drive.google.com/file/d/1S5Cdc14Uldnc4rjWNbf9f1AO39n0nDtv/view?usp=sharing
+
+For Docker build/run instructions, see [`DOCKER.md`](DOCKER.md).
 
 ## Contents
 
