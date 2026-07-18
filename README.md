@@ -16,7 +16,7 @@ For Docker build/run instructions, see [`DOCKER.md`](DOCKER.md).
 ## Contents
 
 ```
-BISQUE/
+CXR_report/
 ├── README.md             # this file
 ├── config.json           # paths + generation params
 ├── inference.py          # entry point (inference + visualization)
@@ -32,13 +32,13 @@ BISQUE/
     └── viz/              # written by inference.py — side-by-side PNGs
 ```
 
-## Step-by-step setup (for someone who received `BISQUE.zip`)
+## Step-by-step setup (for someone who received `CXR_report.zip`)
 
 ### 1. Unzip
 
 ```bash
-unzip BISQUE.zip
-cd BISQUE
+unzip CXR_report.zip
+cd CXR_report
 ```
 
 ### 2. Create the conda environment
