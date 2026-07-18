@@ -4,7 +4,7 @@
 
 ## Overview
 
-CXR Report Generator produces a draft radiology report from a single chest X-ray. Upload a CXR image, run the module, and it returns a written report describing both abnormal and normal findings across the visible anatomical structures, in the familiar **FINDINGS / IMPRESSION** style.
+CXR Report Generator produces a draft radiology report from a single chest X-ray. Upload a CXR image, run the module, and it returns a written report — a concise free-text narrative describing both abnormal and normal findings across the visible anatomical structures (heart and mediastinum, pulmonary vasculature, lungs, pleura, bones, and soft tissue).
 
 The module is powered by **LLaVA-Med v1.5 (Mistral-7B)**, a medical vision-language model, specialized for chest-X-ray reporting through two stages of fine-tuning: **supervised fine-tuning (SFT)** followed by **reinforcement learning with GRPO**, each delivered as a LoRA adapter merged into the base model.
 
@@ -34,13 +34,19 @@ The module processes one image per run and can be iterated over a dataset of che
 
 An NVIDIA GPU (CUDA) is recommended — the 7B model runs in fp16 and is slow or memory-limited on CPU.
 
-## Example output (format)
+## Example output
 
 ```
-FINDINGS: The lungs are clear without focal consolidation. No pleural
-effusion or pneumothorax. Heart size is normal.
-IMPRESSION: No acute cardiopulmonary abnormality.
+Heart size and mediastinal contours are within normal limits. Pulmonary
+vascularity is within normal limits. Lungs are clear. No pneumothorax or
+pleural effusion. Bony structures are intact. No abnormal soft tissue
+masses. Calcified right hilar lymph XXXX.
 ```
+
+The report is a single narrative paragraph. Note: `XXXX` tokens are
+de-identification placeholders inherited from the training data (e.g. the
+Indiana University / OpenI chest-X-ray reports), where protected terms were
+redacted; they may occasionally appear in generated text.
 
 ---
 

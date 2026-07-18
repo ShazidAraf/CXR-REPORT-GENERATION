@@ -50,15 +50,15 @@
 <rect x="800" y="150" width="200" height="200" rx="12" fill="#FAECE7" stroke="#D85A30" stroke-width="1.5"/>
 <text x="900" y="140" font-size="13" font-weight="600" fill="#993C1D" text-anchor="middle">OUTPUT</text>
 <rect x="852" y="172" width="96" height="116" rx="6" fill="#FFFFFF" stroke="#D85A30" stroke-width="1.5"/>
-<text x="866" y="196" font-size="11" font-weight="700" fill="#993C1D">FINDINGS</text>
-<line x1="866" y1="206" x2="934" y2="206" stroke="#F0997B" stroke-width="2"/>
-<line x1="866" y1="218" x2="934" y2="218" stroke="#F5C4B3" stroke-width="2"/>
-<line x1="866" y1="230" x2="920" y2="230" stroke="#F5C4B3" stroke-width="2"/>
-<text x="866" y="252" font-size="11" font-weight="700" fill="#993C1D">IMPRESSION</text>
-<line x1="866" y1="262" x2="934" y2="262" stroke="#F0997B" stroke-width="2"/>
-<line x1="866" y1="274" x2="912" y2="274" stroke="#F5C4B3" stroke-width="2"/>
+<line x1="866" y1="192" x2="934" y2="192" stroke="#F0997B" stroke-width="2"/>
+<line x1="866" y1="204" x2="934" y2="204" stroke="#F5C4B3" stroke-width="2"/>
+<line x1="866" y1="216" x2="934" y2="216" stroke="#F5C4B3" stroke-width="2"/>
+<line x1="866" y1="228" x2="928" y2="228" stroke="#F5C4B3" stroke-width="2"/>
+<line x1="866" y1="240" x2="934" y2="240" stroke="#F5C4B3" stroke-width="2"/>
+<line x1="866" y1="252" x2="934" y2="252" stroke="#F5C4B3" stroke-width="2"/>
+<line x1="866" y1="264" x2="906" y2="264" stroke="#F5C4B3" stroke-width="2"/>
 <text x="900" y="312" font-size="14" font-weight="700" fill="#993C1D" text-anchor="middle">Radiology report</text>
-<text x="900" y="332" font-size="12" fill="#5F5E5A" text-anchor="middle">.txt file resource</text>
+<text x="900" y="332" font-size="12" fill="#5F5E5A" text-anchor="middle">narrative text &#183; .txt file</text>
 </g>
 
 <line x1="40" y1="418" x2="1000" y2="418" stroke="#D3D1C7" stroke-width="1"/>
